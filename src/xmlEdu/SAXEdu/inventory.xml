@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<inventory>
+    <animal animalClass="mammal">
+        <name>Сон Фон</name>
+        <species>Big Panda</species>
+        <habitat>China</habitat>
+        <food>Bamboo</food>
+        <temperament>friendly</temperament>
+        <weight>45.0</weight>
+    </animal>
+
+    <animal animalClass="mammal">
+        <name>Cacao</name>
+        <species>Horilla</species>
+        <habitat>Central Afrika</habitat>
+        <foodRecipe>
+            <name>Horilla Chou</name>
+            <ingridient>fruits</ingridient>
+            <ingridient>Rostki</ingridient>
+            <ingridient>Blat</ingridient>
+        </foodRecipe>
+        <temperament>allwiss</temperament>
+        <weight>45.0</weight>
+    </animal>
+    
+</inventory>
