@@ -7,7 +7,6 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
@@ -39,27 +38,23 @@ public class Main {
         }
 
         String fileAsString = sb.toString();
-        
-        JsonReader jsonReader = Json.createReader(new StringReader(fileAsString));
-        
-        JsonObject person = jsonReader.readObject();
 
-        //Json to Map
-        JsonElement root = new JsonParser().parse("/json.json");
-        com.google.gson.JsonObject object = root.getAsJsonObject().get("config").getAsJsonObject();
-        Gson gson = new Gson();
-        for (Entry<String, JsonElement> entry : object.entrySet()) {
-            ConfigModel model = gson.fromJson(entry.getValue(), ConfigModel.class);
-            System.out.println(model.getDescription());
+        JsonObject person;
+        try (JsonReader jsonReader = Json.createReader(new StringReader(fileAsString))) {
+            person = jsonReader.readObject();
+            //Json to Map
+            JsonElement root = new JsonParser().parse(fileAsString);
+            com.google.gson.JsonObject object = root.getAsJsonObject().get("config").getAsJsonObject();
+            Gson gson = new Gson();
+            for (Entry<String, JsonElement> entry : object.entrySet()) {
+                ConfigModel model = gson.fromJson(entry.getValue(), ConfigModel.class);
+                System.out.println(model.getDescription());
 
+            }
         }
-
-        
-        jsonReader.close();
 
         System.out.println("Name: " + person.getString("name"));
         System.out.println("Description: " + person.getString("description"));
-
 
     }
 
