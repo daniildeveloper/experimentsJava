@@ -10,20 +10,30 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
+        String[] a = {
+            "ss"
+        };
+        List<String[]> list = new ArrayList<>();
+        list.add(a);
+
+    }
+
+    /**
+     * with loop to each element of list
+     */
+    public static void eac() {
         String[] a1 = {"some", "1"};
         String[] a2 = {"Another", "2"};
         List<String[]> list = new ArrayList<>();
         list.add(a1);
         list.add(a2);
 
-
         list.stream().forEach((_item) -> {
-            for (String s : _item){
+            for (String s : _item) {
                 System.out.println(s);
             }
 
         });
     }
-
 
 }

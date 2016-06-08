@@ -94,14 +94,16 @@ public class Main {
             Statement statement = c.createStatement();
             ResultSet resultSet = statement.executeQuery("SELECT * from company");
 
-            while (resultSet.next()) {
-                int id = resultSet.getInt("id");
-                String name = resultSet.getString("name");
-                int age = resultSet.getInt("age");
-                String address = resultSet.getString("address");
-                float salary = resultSet.getFloat("salary");
-                System.out.println("ID: " + id + ".\nName: " + name + "\nAge: " + age + "\nAddress: " + address + "\nSalary: " + salary + "\n-------------------------\n");
-            }
+//            while (resultSet.next()) {
+//                int id = resultSet.getInt("id");
+//                String name = resultSet.getString("name");
+//                int age = resultSet.getInt("age");
+//                String address = resultSet.getString("address");
+//                float salary = resultSet.getFloat("salary");
+//                System.out.println("ID: " + id + ".\nName: " + name + "\nAge: " + age + "\nAddress: " + address + "\nSalary: " + salary + "\n-------------------------\n");
+//
+//            }
+            System.out.println(resultSet.toString());
         } catch (SQLException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }

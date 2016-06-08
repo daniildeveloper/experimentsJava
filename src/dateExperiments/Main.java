@@ -10,8 +10,8 @@ import java.util.GregorianCalendar;
 public class Main {
 
     public static void main(String[] args) {
-        Calendar c = new GregorianCalendar(2034, 2, 12);
-        System.out.println(c.getTime());
+        Calendar c = new GregorianCalendar();
+        System.out.println(c.get(c.WEEK_OF_YEAR));
     }
 
 }
