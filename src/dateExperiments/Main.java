@@ -11,7 +11,7 @@ public class Main {
 
     public static void main(String[] args) {
         Calendar c = new GregorianCalendar();
-        System.out.println(c.get(c.WEEK_OF_YEAR));
+        System.out.println(c.get(Calendar.WEEK_OF_YEAR));
     }
 
 }
